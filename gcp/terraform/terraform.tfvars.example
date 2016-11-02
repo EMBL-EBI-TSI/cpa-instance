@@ -1,0 +1,8 @@
+domain = "Google-Clud"
+disk_image = "centos-cloud/centos-7-v20160119"
+disk_type = "pd-ssd"
+disk_size = "300"
+project = "123456789012"
+machine_type = "n1-standard-2"
+net = "benchmark-net"
+name = "vpn"

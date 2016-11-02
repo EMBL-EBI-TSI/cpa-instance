@@ -1,0 +1,11 @@
+{
+	"applicationName": "Generic server instance",
+	"contactEmail": "gianni@ebi.ac.uk",
+	"about": "A base virtual machine instance",
+	"version": "0.1a",
+	"cloudProviders": [
+		{ "cloudProvider": "GCP", "path": "gcp"}
+	],
+	"inputs": [],
+	"outputs": []
+}

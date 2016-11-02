@@ -1,0 +1,40 @@
+---
+- name: Warming up
+  gather_facts: no
+  become: no
+  hosts: generic-servers
+  tasks:
+    - name: Save remote user
+      set_fact:
+        server_remote_user="{{ ansible_ssh_user }}"
+      tags: ["live"]
+
+    - name: Wait for the server to come online
+      local_action:
+        module: wait_for host={{ inventory_hostname }} search_regex=OpenSSH port=22 delay=5
+      tags: ["live"]
+
+    - name: Keep waiting until SSH allows login
+      local_action:
+        module: shell ssh -tt -o ConnectTimeout=5 -o ControlMaster=no -o StrictHostKeyChecking=no {{ server_remote_user }}@{{ inventory_hostname }} echo "\$HOME ready"
+      register: ssh_conn
+      changed_when: false
+      failed_when: false
+      until: "'ready' in ssh_conn.stdout"
+      retries: 20
+      delay: 5
+      tags: ["live"]
+
+    # - name: Get ready for calling back home
+    #   set_fact:
+    #     portal_deployment_reference="{{ lookup('env','PORTAL_DEPLOYMENT_REFERENCE') }}"
+    #     api_key="{{ lookup('env','callback_api_key') }}"
+    #   delegate_to: localhost
+    #   tags: ["live"]
+    #
+    # - name: Call back home
+    #   uri:  url="https://dev.tsi.ebi.ac.uk:8143/deployment/done/{{ lookup('env','PORTAL_DEPLOYMENT_REFERENCE') }}"
+    #         method=POST
+    #         HEADER_api-key="{{ lookup('env','api-key') }}"
+    #   ignore_errors: yes
+    #   tags: ["live"]
