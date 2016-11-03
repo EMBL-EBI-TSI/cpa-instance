@@ -1,8 +1,8 @@
 #### Credential ####
 # Path to the credential file
-variable "credentials" {
-  default = "credentials.json"
-}
+#variable "credentials" {
+#  default = "credentials.json"
+#}
 
 #### Google Project ####
 # The Google region where the cluster should be created
@@ -21,10 +21,6 @@ variable "project" {
 
 variable "disk_image" {
   description = "OS image name to use for installation"
-}
-
-variable "family_image" {
-  description = "OS image family to use for installation"
 }
 
 variable "disk_size" {
@@ -63,5 +59,5 @@ variable "name" {
 
 # Number of instances to install
 variable "instances" {
-  default = "2"
+  default = "1"
 }
