@@ -7,5 +7,5 @@
 		{ "cloudProvider": "GCP", "path": "gcp"}
 	],
 	"inputs": ["disk_image", "disk_size", "net", "subnet", "network", "project"],
-	"outputs": []
+	"outputs": ["external_ip"]
 }
