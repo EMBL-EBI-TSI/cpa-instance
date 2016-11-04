@@ -1,3 +1,3 @@
 output "external_ip" {
-    value = "${aws_eip.ip.public_ip}"
+    value = "${google_compute_instance.instance.ip_address}"
 }
