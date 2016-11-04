@@ -6,6 +6,6 @@
 	"cloudProviders": [
 		{ "cloudProvider": "GCP", "path": "gcp"}
 	],
-	"inputs": ["disk_image", "disk_size", "net", "subnet", "subnet"],
+	"inputs": ["disk_image", "disk_size", "net", "subnet", "network", "project"],
 	"outputs": []
 }
