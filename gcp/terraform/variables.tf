@@ -17,14 +17,17 @@ variable "zone" {
 
 variable "project" {
   description = "The ID of the Google Cloud project"
+  default = ""
 }
 
 variable "disk_image" {
   description = "OS image name to use for installation"
+  default = ""
 }
 
 variable "disk_size" {
   description = "Disk size"
+  default = ""
 }
 
 # Disk type to use for installation
