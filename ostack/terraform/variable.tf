@@ -23,7 +23,7 @@ variable "machine_type" {
   description = "Machine type (flavor)"
 }
 
-variable "net" {
+variable "network_name" {
   description = "The name of the OpenStack network where to deploy the instance"
 }
 

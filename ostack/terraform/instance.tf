@@ -7,7 +7,7 @@ resource "openstack_compute_instance_v2" "instance" {
   name              = "${var.name}-${count.index + 1}"
 
   network {
-    name           = "${var.net}"
+    name           = "${var.network_name}"
     access_network = true
   }
 

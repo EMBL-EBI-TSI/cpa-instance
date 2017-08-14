@@ -1,2 +1,3 @@
-net                 = "openstack_net_name"
-machine_type        = "s1.large"
+floatingip_pool     = "ext-net"
+machine_type        = "s1.small"
+network_name        = "openstack_net_name"
