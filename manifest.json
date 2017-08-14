@@ -1,15 +1,23 @@
 {
-	"applicationName": "Generic server instance",
-	"contactEmail": "gianni@ebi.ac.uk",
-	"about": "A base virtual machine instance",
-	"version": "0.2a",
-	"cloudProviders": [
-		{ "cloudProvider": "GCP",
-                  "path": "gcp",
-                  "inputs":["project"] }
-	],
-	"inputs": [],
-        "deploymentParameters": ["disk_image",
-                                 "disk_size"],
-	"outputs": ["external_ip"]
+  "applicationName": "Generic server instance",
+  "contactEmail": "gianni@ebi.ac.uk",
+  "about": "A base virtual machine instance",
+  "version": "0.3",
+  "cloudProviders": [
+    {
+      "cloudProvider": "GCP",
+      "path": "gcp",
+      "inputs":["project"]
+    },
+    {
+     "cloudProvider": "OSTACK",
+     "path": "ostack",
+     "inputs":["network_name",
+             "floatingip_pool"]
+    }
+  ],
+  "inputs": [],
+  "deploymentParameters": ["disk_image",
+                           "disk_size"],
+  "outputs": ["external_ip"]
 }
