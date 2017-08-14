@@ -7,17 +7,17 @@
     {
       "cloudProvider": "GCP",
       "path": "gcp",
-      "inputs":["project"]
+      "inputs":["project",
+                "disk_size"]
     },
     {
      "cloudProvider": "OSTACK",
      "path": "ostack",
      "inputs":["network_name",
-             "floatingip_pool"]
+               "floatingip_pool",
+               "machine_type"]
     }
   ],
-  "inputs": [],
-  "deploymentParameters": ["disk_image",
-                           "disk_size"],
+  "inputs": ["disk_image"],
   "outputs": ["external_ip"]
 }
