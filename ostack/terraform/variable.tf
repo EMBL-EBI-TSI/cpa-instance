@@ -31,3 +31,7 @@ variable "keypair" {
   default     = "dev-key"
   description = "The OpenStack name of public SSH key to inject in the VM "
 }
+
+variable "floatingip_pool" {
+  default = "net_external"
+}
