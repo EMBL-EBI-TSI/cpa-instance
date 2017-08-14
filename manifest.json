@@ -2,10 +2,16 @@
 	"applicationName": "Generic server instance",
 	"contactEmail": "gianni@ebi.ac.uk",
 	"about": "A base virtual machine instance",
-	"version": "0.1a",
+	"version": "0.2a",
 	"cloudProviders": [
-		{ "cloudProvider": "GCP", "path": "gcp"}
+		{ "cloudProvider": "GCP",
+                  "path": "gcp",
+                  "inputs": ["net",
+                             "subnet",
+                             "project"] }
 	],
-	"inputs": ["disk_image", "disk_size", "net", "subnet", "network", "project"],
+	"inputs": ["network"],
+        "deploymentParameters": ["disk_image",
+                                 "disk_size"],
 	"outputs": ["external_ip"]
 }
