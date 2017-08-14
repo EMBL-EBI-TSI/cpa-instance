@@ -6,11 +6,9 @@
 	"cloudProviders": [
 		{ "cloudProvider": "GCP",
                   "path": "gcp",
-                  "inputs": ["net",
-                             "subnet",
-                             "project"] }
+                  "inputs":["project"] }
 	],
-	"inputs": ["network"],
+	"inputs": [],
         "deploymentParameters": ["disk_image",
                                  "disk_size"],
 	"outputs": ["external_ip"]
