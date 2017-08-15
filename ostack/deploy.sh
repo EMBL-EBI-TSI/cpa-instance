@@ -36,9 +36,6 @@ echo "export TF_STATE=${TF_STATE}"
 echo -e "\n\t${CYAN}Terraform apply${NC}\n"
 terraform apply --state=${DPL}'terraform.tfstate' ${APP}'/ostack/terraform'
 
-# Print the ssh configuration file
-cat "${DPL}ssh.config"
-
 # Extract the external IP of the instance
 external_ip=$(terraform output -state=${DPL}'terraform.tfstate' external_ip)
 
