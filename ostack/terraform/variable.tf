@@ -3,11 +3,6 @@ variable "name" {
   description = "The name of the deployment"
 }
 
-variable "availability_zone" {
-  default     = "AZ_1"
-  description = "The availability zone in which to create the server. Changing this creates a new server."
-}
-
 variable "instances" {
   default     = 1
   description = "Number of instances to deploy"

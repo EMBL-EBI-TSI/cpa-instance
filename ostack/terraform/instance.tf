@@ -3,7 +3,6 @@ resource "openstack_compute_instance_v2" "instance" {
   flavor_name       = "${var.machine_type}"
   key_pair          = "${var.keypair}"
   image_name        = "${var.disk_image}"
-#  availability_zone = "${var.availability_zone}"
   name              = "${var.name}-${count.index + 1}"
 
   network {
