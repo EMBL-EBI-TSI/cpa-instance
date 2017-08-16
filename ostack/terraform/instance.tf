@@ -1,9 +1,9 @@
 resource "openstack_compute_instance_v2" "instance" {
-  count             = "${var.instances}"
-  flavor_name       = "${var.machine_type}"
-  key_pair          = "${var.name}-keypair"
-  image_name        = "${var.disk_image}"
-  name              = "${var.name}-${count.index + 1}"
+  count       = "${var.instances}"
+  flavor_name = "${var.machine_type}"
+  key_pair    = "${var.name}-keypair"
+  image_name  = "${var.disk_image}"
+  name        = "${var.name}-${count.index + 1}"
 
   network {
     name           = "${var.network_name}"
