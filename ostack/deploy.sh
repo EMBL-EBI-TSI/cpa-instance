@@ -38,8 +38,3 @@ terraform apply --state=${DPL}'terraform.tfstate' ${APP}'/ostack/terraform'
 
 # Extract the external IP of the instance
 external_ip=$(terraform output -state=${DPL}'terraform.tfstate' external_ip)
-
-# Launch Ansible playbook
-#cd ostack/ansible || exit
-#echo -e "\n\t${CYAN}Launch Ansible playbook${NC}\n"
-#ansible-playbook -b set_profile_public_key.yml

@@ -22,10 +22,9 @@ variable "network_name" {
   description = "The name of the OpenStack network where to deploy the instance"
 }
 
-variable "portal_public_key_path" {
-  description = "The path of the public SSH key to be injected in the vm"
+variable "profile_public_key" {
+  description = "The public SSH key to be injected in the vm"
   type        = "string"
-  default     = "~/.ssh/id_rsa.pub"
 }
 
 variable "floatingip_pool" {

@@ -1,3 +1,4 @@
 floatingip_pool     = "ext-net"
 machine_type        = "s1.nano"
 network_name        = "openstack_net_name"
+profile_public_key  = "ssh-rsa AAA......z== mail@domain.com"
