@@ -2,7 +2,7 @@
   "applicationName": "Generic server instance",
   "contactEmail": "gianni@ebi.ac.uk",
   "about": "A base virtual machine instance",
-  "version": "0.3",
+  "version": "0.4",
   "cloudProviders": [
     {
       "cloudProvider": "GCP",
@@ -13,11 +13,12 @@
     {
      "cloudProvider": "OSTACK",
      "path": "ostack",
-     "inputs":["network_name",
-               "floatingip_pool",
-               "machine_type"]
+     "inputs":["machine_type"]
     }
   ],
   "inputs": ["disk_image"],
+  "deploymentParameters": ["network_name",
+                           "floatingip_pool"],
+
   "outputs": ["external_ip"]
 }
