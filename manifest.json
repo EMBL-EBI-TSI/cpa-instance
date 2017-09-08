@@ -5,12 +5,6 @@
   "version": "0.4",
   "cloudProviders": [
     {
-      "cloudProvider": "GCP",
-      "path": "gcp",
-      "inputs":["project",
-                "disk_size"]
-    },
-    {
      "cloudProvider": "OSTACK",
      "path": "ostack",
      "inputs":["machine_type"]
