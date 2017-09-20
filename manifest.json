@@ -2,8 +2,13 @@
   "applicationName": "Generic server instance",
   "contactEmail": "gianni@ebi.ac.uk",
   "about": "A base virtual machine instance",
-  "version": "0.4",
+  "version": "0.5",
   "cloudProviders": [
+    {
+      "cloudProvider": "AWS",
+      "path": "aws",
+      "inputs":["machine_type"]
+    },
     {
      "cloudProvider": "OSTACK",
      "path": "ostack",
@@ -12,7 +17,10 @@
   ],
   "inputs": ["disk_image"],
   "deploymentParameters": ["network_name",
-                           "floatingip_pool"],
+                           "floatingip_pool",
+                           "vpc_id",
+                           "vpc_cidr_block",
+                           "subnet_cidr_block"],
 
   "outputs": ["external_ip"]
 }
