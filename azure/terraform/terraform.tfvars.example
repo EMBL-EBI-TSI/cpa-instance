@@ -1,0 +1,17 @@
+# azure basic creds
+subscription_id = ""
+client_id = ""
+client_secret = ""
+tenant_id = ""
+
+# don't forget the comment column! it is required for azure
+profile_public_key = "ssh-rsa yourkeyhere you@example.com"
+
+region = "westeurope"
+subnet_id = "/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet"
+resource_group = "resgroup"
+
+os_image_publisher = "Canonical"
+os_image_offer = "UbuntuServer"
+os_image_sku = "16.04-LTS"
+os_image_version = "latest"

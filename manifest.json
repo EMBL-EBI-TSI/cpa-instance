@@ -13,6 +13,11 @@
      "cloudProvider": "OSTACK",
      "path": "ostack",
      "inputs":["machine_type"]
+    },
+    {
+	"cloudProvider": "AZURE",
+	"path": "azure",
+	"inputs": ["machine_type","region","client_id","client_secret","tenant_id","subscription_id","subnet_id","resource_group","os_image_publisher","os_image_offer","os_image_sku","os_image_version"]
     }
   ],
   "inputs": ["disk_image"],
