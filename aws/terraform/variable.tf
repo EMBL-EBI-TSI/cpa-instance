@@ -36,14 +36,6 @@ variable "profile_public_key" {
 
 ### Network
 
-variable "vpc_cidr_block" {
-  description = "The cidr block of the referenced VPC"
-}
-
-variable "vpc_id" {
-  description = "The id of the referenced VPC"
-}
-
-variable "subnet_cidr_block" {
-  description = "The cidr block of the subnet, it has to be a subset of the cidr block of the referenced VPC and has not conflict with other subnet eventually defined."
+variable "subnet_id" {
+  description = "The ID of the subnet where the virtual machine will be deployed"
 }

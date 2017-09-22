@@ -3,12 +3,9 @@ machine_type       = "t2.micro"
 disk_image         = "ami-7abd0209"
 profile_public_key = "ssh-rsa AAA...XYZ== cloud.portal.tsi@ebi.ac.uk"
 
-
-# VPC and subnet
-vpc_id             = "vpc-666fubmf"
-vpc_cidr_block     = "10.21.0.0/16"
-subnet_cidr_block  = "10.21.21.0/24"
-
 # AWS provider credentials
 access_key         = "AKIAIEFMZFDDX5LPUGRA"
 secret_key         = "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"
+
+# Subnet
+subnet_id          = "subnet-f4a1c893"

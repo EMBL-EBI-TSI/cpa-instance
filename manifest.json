@@ -2,7 +2,7 @@
   "applicationName": "Generic server instance",
   "contactEmail": "gianni@ebi.ac.uk",
   "about": "A base virtual machine instance",
-  "version": "0.5",
+  "version": "0.6",
   "cloudProviders": [
     {
       "cloudProvider": "AWS",
@@ -18,9 +18,7 @@
   "inputs": ["disk_image"],
   "deploymentParameters": ["network_name",
                            "floatingip_pool",
-                           "vpc_id",
-                           "vpc_cidr_block",
-                           "subnet_cidr_block"],
+                           "subnet_id"],
 
   "outputs": ["external_ip"]
 }
