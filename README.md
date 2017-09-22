@@ -40,6 +40,7 @@ i.e:
 ssh -i ~/.ssh/id_rsa ubuntu@216.58.212.78
 ```
 
+In AWS the `OS_dafualt_user` is always `ec2-user`.
 
 
 ### Configuration example
@@ -76,6 +77,4 @@ The `disk_image` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AW
 ##### AWS
 | Parameter name        | Parameter value |
 | ---                   | --- |
-| `vpc_id`              | `vpc-123xyzta` |
-| `vpc_cidr_block`      | `10.21.0.0/16` |
-| `subnet_cidr_block`   | `10.21.21.0/24` |
+| `subnet_id`           | `subnet-123xyzta` |
