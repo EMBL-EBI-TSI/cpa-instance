@@ -50,6 +50,8 @@ The `disk_image` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AW
 
 #### Inputs
 
+Inputs entry is not mandatory, if a default input value is defined in the terraform configuration, it will be used when no inputs are entered.
+
 ##### OpenStack
 
 | Input name            | Input value |
@@ -66,6 +68,15 @@ The `disk_image` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AW
 
 #### Deployment parameters
 
+The current version of the portal is requiring to include the parameters of all the cloud providers, in the deployment configurations. This behaviour will change soon, for the moment just enter a random value for the parameters that are not necessary for your cloud provider.
+
+| Parameter name        | Parameter value |
+| ---                   | --- |
+| `network_name`        | `test_network` |
+| `floatingip_pool`     | `ext-net` |
+| `subnet_id`           | `subnet-123xyzta` |
+
+
 ##### OpenStack
 `name`: `extcloud-05`
 
@@ -78,3 +89,37 @@ The `disk_image` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AW
 | Parameter name        | Parameter value |
 | ---                   | --- |
 | `subnet_id`           | `subnet-123xyzta` |
+
+This information will be available in you AWS console, when using a manually configured AWS subnet, or will be available as an output in the `Deployments` page when you are using the `cpa-network` appliance.
+
+## AWS Cloud Credential
+
+Create a entry in the `Cloud Credentials` section whit Parameters:
+
+| Parameter name        | Parameter value |
+| ---                   | --- |
+`AWS_ACCESS_KEY_ID`       | `AABBIIFFZZDDX5LLUURR`
+`AWS_SECRET_ACCESS_KEY`   | `3XYo12AbC3defGHijkL4eFancsq8lXu68I7plsE5`
+`AWS_DEFAULT_REGION`      | `eu-west-1`
+
+You can find the first two values (or create a new credential) in your AWS user page, under the section `IAM` --> `USERS`.  
+The available regions, at the moment of writing, are the following:
+
+Code            | Name
+|---            |---|
+`us-east-1`       |`US East (N. Virginia)`
+`us-east-2`       |`US East (Ohio)`
+`us-west-1`       |`US West (N. California)`
+`us-west-2`       |`US West (Oregon)`
+`ca-central-1`    |`Canada (Central)`
+`eu-west-1`       |`EU (Ireland)`
+`eu-central-1`    |`EU (Frankfurt)`
+`eu-west-2`       |`EU (London)`
+`ap-northeast-1`  |`Asia Pacific (Tokyo)`
+`ap-northeast-2`  |`Asia Pacific (Seoul)`
+`ap-southeast-1`  |`Asia Pacific (Singapore)`
+`ap-southeast-2`  |`Asia Pacific (Sydney)`
+`ap-south-1`      |`Asia Pacific (Mumbai)`
+`sa-east-1`       |`South America (São Paulo)`
+
+Note: In order to use the default `AMI` value with `cpa-instance` you can choose `eu-west-1`
