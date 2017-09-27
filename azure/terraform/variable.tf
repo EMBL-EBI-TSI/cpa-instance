@@ -1,5 +1,5 @@
 variable "name" {
-  default = "cpa-instance"
+  default = "tsiinstance"
   description = "The name of the deployment"
 }
 
