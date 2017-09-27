@@ -52,18 +52,22 @@ variable "region" {
 # OS image variables
 variable "os_image_publisher" {
   description = "name of OS publisher"
+  default = "Canonical"
 }
 
 variable "os_image_offer" {
   description = "name of OS offer"
+  default = "UbuntuServer"
 }
 
 variable "os_image_sku" {
   description = "SKU of OS offer"
+  default = "17.04"
 }
 
 variable "os_image_version" {
   description = "version of OS offer"
+  default = "latest"
 }
 
 variable "os_disk_type" {
