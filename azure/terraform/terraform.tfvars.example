@@ -1,8 +1,8 @@
 # azure basic creds
-subscription_id = ""
-client_id = ""
-client_secret = ""
-tenant_id = ""
+#subscription_id = ""
+#client_id = ""
+#client_secret = ""
+#tenant_id = ""
 
 # don't forget the comment column! it is required for azure
 profile_public_key = "ssh-rsa yourkeyhere you@example.com"
