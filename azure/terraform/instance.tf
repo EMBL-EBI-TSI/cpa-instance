@@ -32,6 +32,6 @@ resource "azurerm_virtual_machine" "instance" {
     name          = "${var.name}_os_disk"
     caching = "ReadWrite"
     create_option = "FromImage"
-    vhd_uri = "${azurerm_storage_account.instance-storage.primary_blob_endpoint}${azurerm_storage_container.instance-container.name}/${var.name}-osdisk.vhd"
+    vhd_uri = "${azurerm_storage_account.instance_storage.primary_blob_endpoint}${azurerm_storage_container.instance_container.name}/${var.name}-osdisk.vhd"
   }
 }
