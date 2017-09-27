@@ -5,9 +5,12 @@ resource "aws_instance" "instance" {
   key_name      = "${aws_key_pair.aws.key_name}"
   subnet_id     = "${var.subnet_id}"
 
-  vpc_security_group_ids = ["${aws_security_group.allow-icmp.id}",
-    "${aws_security_group.allow-ssh.id}",
+  vpc_security_group_ids = [
     "${aws_security_group.allow-egress.id}",
+    "${aws_security_group.allow-http.id}",
+    "${aws_security_group.allow-https.id}",
+    "${aws_security_group.allow-icmp.id}",
+    "${aws_security_group.allow-ssh.id}",
   ]
 
   instance_initiated_shutdown_behavior = "terminate"

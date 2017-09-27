@@ -27,9 +27,6 @@ variable "region" {
   default = "eu-west-1"
 }
 
-variable "access_key" {}
-variable "secret_key" {}
-
 variable "profile_public_key" {
   description = "The ssh public key to inject in the host"
 }
