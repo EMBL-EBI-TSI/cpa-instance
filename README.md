@@ -98,8 +98,8 @@ Create a entry in the `Cloud Credentials` section whit Parameters:
 
 | Parameter name        | Parameter value |
 | ---                   | --- |
-`AWS_ACCESS_KEY_ID`       | `AABBIIFFZZDDX5LLUURR`
-`AWS_SECRET_ACCESS_KEY`   | `3XYo12AbC3defGHijkL4eFancsq8lXu68I7plsE5`
+`AWS_ACCESS_KEY_ID`       | `AKIAIOSFODNN7EXAMPLE`
+`AWS_SECRET_ACCESS_KEY`   | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
 `AWS_DEFAULT_REGION`      | `eu-west-1`
 
 You can find the first two values (or create a new credential) in your AWS user page, under the section `IAM` --> `USERS`.  

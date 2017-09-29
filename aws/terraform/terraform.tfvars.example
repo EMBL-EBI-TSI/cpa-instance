@@ -4,8 +4,8 @@ disk_image         = "ami-7abd0209"
 profile_public_key = "ssh-rsa AAA...XYZ== cloud.portal.tsi@ebi.ac.uk"
 
 # AWS provider credentials
-access_key         = "AKIAIEFMZFDDX5LPUGRA"
-secret_key         = "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"
+access_key         = "AKIAIOSFODNN7EXAMPLE"
+secret_key         = "`wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 # Subnet
 subnet_id          = "subnet-f4a1c893"
