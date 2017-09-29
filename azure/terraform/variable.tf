@@ -1,5 +1,5 @@
 variable "name" {
-  default = "cpa-instance"
+  default = "tsiinstance"
   description = "The name of the deployment"
 }
 
@@ -33,37 +33,41 @@ variable "region" {
 
 # For help on getting the 4 variables below, see: https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html#creating-a-service-principal-in-the-azure-portal
 
-variable "subscription_id" {
-  description = "ID of the Azure subscription to use"
-}
-
-variable "client_id" {
-  description = "ID of the Azure client to use"
-}
-
-variable "client_secret" {
-  description = "Value of the Azure client secret"
-}
-
-variable "tenant_id" {
-  description = "ID of the Azure tenant to use"
-}
+#variable "subscription_id" {
+#  description = "ID of the Azure subscription to use"
+#}
+#
+#variable "client_id" {
+#  description = "ID of the Azure client to use"
+#}
+#
+#variable "client_secret" {
+#  description = "Value of the Azure client secret"
+#}
+#
+#variable "tenant_id" {
+#  description = "ID of the Azure tenant to use"
+#}
 
 # OS image variables
 variable "os_image_publisher" {
   description = "name of OS publisher"
+  default = "Canonical"
 }
 
 variable "os_image_offer" {
   description = "name of OS offer"
+  default = "UbuntuServer"
 }
 
 variable "os_image_sku" {
   description = "SKU of OS offer"
+  default = "17.04"
 }
 
 variable "os_image_version" {
   description = "version of OS offer"
+  default = "latest"
 }
 
 variable "os_disk_type" {
