@@ -124,18 +124,19 @@ Code            | Name
 
 Note: In order to use the default `AMI` value with `cpa-instance` you can choose `eu-west-1`
 
-# Azure
+## Azure
 
 | Parameter name        | Parameter value |
 | ---                   | --- |
-| `region`        	| `westeurope` |
+| `region`            	| `westeurope` |
 | `resource_group`     	| `resourcegroup_from_cpa_network` |
 
-The default username is 'clouduser'
+The default username is `clouduser`
 
 For the deployment parameters, only `subnet_id` and `network_name` are relevant:
+
 | Parameter name        | Parameter value |
 | ---                   | --- |
 | `floatingip_pool`   	| `NA` |
-| `network_name`     	| `network_from_cpa_network` |
-| `subnet_id`		| `/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet`
+| `network_name`     	  | `network_from_cpa_network` |
+| `subnet_id`	        	| `/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet`
