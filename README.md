@@ -1,13 +1,11 @@
-#TSI Cloud Portal - generic server instance
+# TSI Cloud Portal - generic server instance
 
 A generic server Portal app deployable in the Cloud.  
-
 
 ## Requirements
 
 A `network` and a `floating ip pool` are expected to be shared with other virtual machine, therefore is not provided and destroyed with this terraform description.  
 If you want to provide a new network you can use the `cpa-network` terraform app.  
-
 
 ## Instructions
 
@@ -17,14 +15,12 @@ If you want to provide a new network you can use the `cpa-network` terraform app
 - Create a new entry in the `Profile`-`Deployment Parameters` section.  
 - Create a new entry in the `Profile`-`Configurations` section.
 
-
 ### Deployment in the Cloud Portal
 
 - Create a new `Deployment` choosing the `app` form the `Reposotory` menu.  
 - Select the provider to use form the top left corner radio menu: `Select provider`.  
 - Enter the required input in the `Inputs` section.  
 - Select a configuration in the `Deployment paramters` section.  
-
 
 ###  ssh connection
 
@@ -41,6 +37,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@216.58.212.78
 ```
 
 In AWS the `OS_dafualt_user` is always `ec2-user`.
+
+In Azure the `OS_dafualt_user` is always ` is `clouduser`
 
 
 ### Configuration example
@@ -59,12 +57,20 @@ Inputs entry is not mandatory, if a default input value is defined in the terraf
 | `disk_image`          | `ubuntu-16.04` |
 | `machine_type`        | `s1.nano` |
 
+
 ##### AWS
 
 | Input name            | Input value |
 | ---                   | --- |
 | `disk_image`          | `ami-bb9a6bc2` |
 | `machine_type`        | `t2.micro` |
+
+##### Azure
+
+| Parameter name        | Parameter value |
+| ---                   | --- |
+| `region`            	| `westeurope` |
+| `resource_group`     	| `resourcegroup_from_cpa_network` |
 
 #### Deployment parameters
 
@@ -78,6 +84,7 @@ The current version of the portal is requiring to include the parameters of all 
 
 
 ##### OpenStack
+
 `name`: `extcloud-05`
 
 | Parameter name        | Parameter value |
@@ -86,11 +93,22 @@ The current version of the portal is requiring to include the parameters of all 
 | `floatingip_pool`     | `ext-net` |
 
 ##### AWS
+
 | Parameter name        | Parameter value |
 | ---                   | --- |
 | `subnet_id`           | `subnet-123xyzta` |
 
 This information will be available in you AWS console, when using a manually configured AWS subnet, or will be available as an output in the `Deployments` page when you are using the `cpa-network` appliance.
+
+##### Azure
+
+For the deployment parameters, only `subnet_id` and `network_name` are relevant:
+
+| Parameter name        | Parameter value |
+| ---                   | --- |
+| `floatingip_pool`   	| `NA` |
+| `network_name`        | `network_from_cpa_network` |
+| `subnet_id`           | `/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet`
 
 ## AWS Cloud Credential
 
@@ -98,15 +116,15 @@ Create a entry in the `Cloud Credentials` section whit Parameters:
 
 | Parameter name        | Parameter value |
 | ---                   | --- |
-`AWS_ACCESS_KEY_ID`       | `AKIAIOSFODNN7EXAMPLE`
-`AWS_SECRET_ACCESS_KEY`   | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
-`AWS_DEFAULT_REGION`      | `eu-west-1`
+`AWS_ACCESS_KEY_ID`     | `AKIAIOSFODNN7EXAMPLE`
+`AWS_SECRET_ACCESS_KEY` | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
+`AWS_DEFAULT_REGION`    | `eu-west-1`
 
 You can find the first two values (or create a new credential) in your AWS user page, under the section `IAM` --> `USERS`.  
 The available regions, at the moment of writing, are the following:
 
-Code            | Name
-|---            |---|
+Code              | Name
+| ---             | --- |
 `us-east-1`       |`US East (N. Virginia)`
 `us-east-2`       |`US East (Ohio)`
 `us-west-1`       |`US West (N. California)`
@@ -123,20 +141,3 @@ Code            | Name
 `sa-east-1`       |`South America (São Paulo)`
 
 Note: In order to use the default `AMI` value with `cpa-instance` you can choose `eu-west-1`
-
-## Azure
-
-| Parameter name        | Parameter value |
-| ---                   | --- |
-| `region`            	| `westeurope` |
-| `resource_group`     	| `resourcegroup_from_cpa_network` |
-
-The default username is `clouduser`
-
-For the deployment parameters, only `subnet_id` and `network_name` are relevant:
-
-| Parameter name        | Parameter value |
-| ---                   | --- |
-| `floatingip_pool`   	| `NA` |
-| `network_name`     	  | `network_from_cpa_network` |
-| `subnet_id`	        	| `/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet`
