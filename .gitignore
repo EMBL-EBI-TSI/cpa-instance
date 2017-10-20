@@ -13,5 +13,8 @@ TSISOMEID*
 */tmp/*
 *.retry
 
+#Test
+env.json
+
 *.log
 volumes_mapping.json
