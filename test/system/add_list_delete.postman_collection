@@ -1,0 +1,187 @@
+{
+  "variables": [],
+  "info": {
+    "name": "cpa-instance-API-tests",
+    "_postman_id": "a3556420-cc4a-feae-128c-25f8bb4fe692",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Plain auth",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "postman.setEnvironmentVariable(\"token\", responseBody);",
+              "tests[\"Status code is 200\"] = (responseCode.code === 200);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://api.aap.tsi.ebi.ac.uk/auth",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic dHNpLXRlc3Q6JnAyJFhAR1RGQGc4OVZeQUIyVGE=",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "This endpoint causes the server to send the authentication token."
+      },
+      "response": []
+    },
+    {
+      "name": "Registered repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+              "",
+              "if (responseBody.has(\"Generic server instance\")) {",
+              "    // Do not add the application, if already present.",
+              "    postman.setNextRequest(\"Delete cpa-instance application\");",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://dev.api.portal.tsi.ebi.ac.uk/application/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "This endpoint causes the server to send the list of the registered applications."
+      },
+      "response": []
+    },
+    {
+      "name": "Add cpa-instance application",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 201\"] = (responseCode.code === 201);",
+              "",
+              "tests[\"Body matches string\"] = responseBody.has(\"Generic server instance\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://dev.api.portal.tsi.ebi.ac.uk/application/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Origin",
+            "value": "http://dev.api.portal.tsi.ebi.ac.uk/application/",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"repoUri\":\"https://github.com/EMBL-EBI-TSI/cpa-instance\"  \n}"
+        },
+        "description": "This endpoint causes the server to register an application"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete cpa-instance application",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = (responseCode.code === 200);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://dev.api.portal.tsi.ebi.ac.uk/application/Generic%20server%20instance",
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Origin",
+            "value": "http://dev.api.portal.tsi.ebi.ac.uk/application/",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "description": "This endpoint causes the server to delete a registered application."
+      },
+      "response": []
+    }
+  ]
+}
