@@ -22,7 +22,7 @@
         }
       ],
       "request": {
-        "url": "https://api.aap.tsi.ebi.ac.uk/auth",
+        "url": "https://api.aai.ebi.ac.uk/auth",
         "method": "GET",
         "header": [
           {
