@@ -10,7 +10,7 @@ Use the following command, for encoding a string containing the `username` and `
     YWRtaW46cGFzc3dvcmQ=
 
 ### Run a test collection
-Test can be run using `newman` command line, syntax:
+The test can be run using `newman` command line, syntax:
 
     newman run -e env.json collection-name.postman_collection
 
