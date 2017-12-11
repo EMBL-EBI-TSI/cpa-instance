@@ -4,7 +4,7 @@ A generic server Portal app deployable in the Cloud.
 
 ## Requirements
 
-A `network` and a `floating ip pool` are expected to be shared with other virtual machine, therefore is not provided and destroyed with this terraform description.  
+A `network` and a `floating ip pool` are expected to be shared with other virtual machines, therefore is not provided and destroyed with this terraform description.  
 If you want to provide a new network you can use the `cpa-network` terraform app.  
 
 ## Instructions
@@ -17,10 +17,10 @@ If you want to provide a new network you can use the `cpa-network` terraform app
 
 ### Deployment in the Cloud Portal
 
-- Create a new `Deployment` choosing the `app` form the `Reposotory` menu.  
+- Create a new `Deployment` choosing the `app` form the `Repository` menu.  
 - Select the provider to use form the top left corner radio menu: `Select provider`.  
 - Enter the required input in the `Inputs` section.  
-- Select a configuration in the `Deployment paramters` section.  
+- Select a configuration in the `Deployment parameters` section.  
 
 ###  ssh connection
 
@@ -36,9 +36,9 @@ i.e:
 ssh -i ~/.ssh/id_rsa ubuntu@216.58.212.78
 ```
 
-In AWS the `OS_dafualt_user` is always `ec2-user`.
+In AWS, the `OS_dafualt_user` is always `ec2-user`.
 
-In Azure the `OS_dafualt_user` is always ` is `clouduser`
+In Azure, the `OS_dafualt_user` is always `clouduser`
 
 
 ### Configuration example
@@ -98,7 +98,7 @@ The current version of the portal is requiring to include the parameters of all 
 | ---                   | --- |
 | `subnet_id`           | `subnet-123xyzta` |
 
-This information will be available in you AWS console, when using a manually configured AWS subnet, or will be available as an output in the `Deployments` page when you are using the `cpa-network` appliance.
+This information will be available in your AWS console, when using a manually configured AWS subnet, or will be available as an output in the `Deployments` page when you are using the appliance `cpa-network `.
 
 ##### Azure
 
@@ -112,7 +112,7 @@ For the deployment parameters, only `subnet_id` and `network_name` are relevant:
 
 ## AWS Cloud Credential
 
-Create a entry in the `Cloud Credentials` section whit Parameters:
+Create an entry in the `Cloud Credentials` section whit Parameters:
 
 | Parameter name        | Parameter value |
 | ---                   | --- |
