@@ -1,5 +1,5 @@
 resource "openstack_compute_secgroup_v2" "cloud-server" {
-  name        = "${var.name}-cloud-server}"
+  name        = "${var.name}-cloud-server"
   description = "Allow HTTP, HTTPS, SSH and icmp traffic"
 
   rule {
