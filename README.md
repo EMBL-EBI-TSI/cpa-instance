@@ -79,7 +79,7 @@ The current version of the portal is requiring to include the parameters of all 
 | Parameter name        | Parameter value |
 | ---                   | --- |
 | `network_name`        | `test_network` |
-| `floatingip_pool`     | `ext-net` |
+| `floating_ip_pool`    | `ext-net` |
 | `subnet_id`           | `subnet-123xyzta` |
 
 
@@ -90,7 +90,7 @@ The current version of the portal is requiring to include the parameters of all 
 | Parameter name        | Parameter value |
 | ---                   | --- |
 | `network_name`        | `test_network` |
-| `floatingip_pool`     | `ext-net` |
+| `floating_ip_pool`    | `ext-net` |
 
 ##### AWS
 
@@ -106,7 +106,7 @@ For the deployment parameters, only `subnet_id` and `network_name` are relevant:
 
 | Parameter name        | Parameter value |
 | ---                   | --- |
-| `floatingip_pool`   	| `NA` |
+| `floating_ip_pool`    | `NA` |
 | `network_name`        | `network_from_cpa_network` |
 | `subnet_id`           | `/subscriptions/sub-id/resourceGroups/resgroup/subnets/subnet`
 

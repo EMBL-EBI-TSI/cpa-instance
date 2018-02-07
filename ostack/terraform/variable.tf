@@ -27,6 +27,6 @@ variable "profile_public_key" {
   type        = "string"
 }
 
-variable "floatingip_pool" {
+variable "floating_ip_pool" {
   default = "net_external"
 }

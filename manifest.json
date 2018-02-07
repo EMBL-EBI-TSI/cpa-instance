@@ -22,7 +22,7 @@
   ],
   "inputs": ["disk_image_name"],
   "deploymentParameters": ["network_name",
-                           "floatingip_pool",
+                           "floating_ip_pool",
                            "subnet_id"],
 
   "outputs": ["external_ip"]
