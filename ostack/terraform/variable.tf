@@ -8,7 +8,7 @@ variable "instances" {
   description = "Number of instances to deploy"
 }
 
-variable "disk_image" {
+variable "disk_image_name" {
   default     = "ubuntu-16.04"
   description = "OS image name to use for node installation"
 }

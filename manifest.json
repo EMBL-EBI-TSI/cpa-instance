@@ -20,7 +20,7 @@
 	"inputs": ["machine_type","region","resource_group","os_image_publisher","os_image_offer","os_image_sku","os_image_version"]
     }
   ],
-  "inputs": ["disk_image"],
+  "inputs": ["disk_image_name"],
   "deploymentParameters": ["network_name",
                            "floatingip_pool",
                            "subnet_id"],

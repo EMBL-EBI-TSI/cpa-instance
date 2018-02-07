@@ -6,7 +6,7 @@ resource "google_compute_instance" "instance" {
   tags          = ["http", "https", "ssh", "vpn"]
 
   disk {
-    image       = "${var.disk_image}"
+    image       = "${var.disk_image_name}"
     type        = "${var.disk_type}"
     size        = "${var.disk_size}"
   }

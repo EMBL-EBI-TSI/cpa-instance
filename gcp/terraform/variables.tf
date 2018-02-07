@@ -20,7 +20,7 @@ variable "project" {
   default = ""
 }
 
-variable "disk_image" {
+variable "disk_image_name" {
   description = "OS image name to use for installation"
   default = ""
 }

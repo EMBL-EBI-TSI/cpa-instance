@@ -1,6 +1,6 @@
 # Instance
 machine_type       = "t2.micro"
-disk_image         = "ami-7abd0209"
+disk_image_name    = "ami-7abd0209"
 profile_public_key = "ssh-rsa AAA...XYZ== cloud.portal.tsi@ebi.ac.uk"
 
 # AWS provider credentials

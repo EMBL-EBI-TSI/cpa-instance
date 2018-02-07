@@ -44,7 +44,7 @@ In Azure, the `OS_dafualt_user` is always `clouduser`
 ### Configuration example
 
 Note: most of this values are specific for each cloud provider and in many cases specific for your environment inside the cloud provider himself.  
-The `disk_image` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) value, which is also different, for the same Image, in every AWS region.
+The `disk_image_name` in AWS is referred to the [`AMI`](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) value, which is also different, for the same Image, in every AWS region.
 
 #### Inputs
 
@@ -54,7 +54,7 @@ Inputs entry is not mandatory, if a default input value is defined in the terraf
 
 | Input name            | Input value |
 | ---                   | --- |
-| `disk_image`          | `ubuntu-16.04` |
+| `disk_image_name`     | `ubuntu-16.04` |
 | `machine_type`        | `s1.nano` |
 
 
@@ -62,7 +62,7 @@ Inputs entry is not mandatory, if a default input value is defined in the terraf
 
 | Input name            | Input value |
 | ---                   | --- |
-| `disk_image`          | `ami-bb9a6bc2` |
+| `disk_image_name`     | `ami-bb9a6bc2` |
 | `machine_type`        | `t2.micro` |
 
 ##### Azure

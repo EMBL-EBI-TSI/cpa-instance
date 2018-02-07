@@ -8,7 +8,7 @@ variable "instances" {
   description = "Number of instances to deploy"
 }
 
-variable "disk_image" {
+variable "disk_image_name" {
   default     = "ami-bb9a6bc2"
   description = "OS AMI image name to use for node installation"
 }
