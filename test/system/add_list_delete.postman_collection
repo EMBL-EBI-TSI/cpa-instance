@@ -122,11 +122,6 @@
             "key": "Content-Type",
             "value": "application/json",
             "description": ""
-          },
-          {
-            "key": "Origin",
-            "value": "http://dev.api.portal.tsi.ebi.ac.uk/application/",
-            "description": ""
           }
         ],
         "body": {
@@ -167,11 +162,6 @@
           {
             "key": "Content-Type",
             "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Origin",
-            "value": "http://dev.api.portal.tsi.ebi.ac.uk/application/",
             "description": ""
           }
         ],
