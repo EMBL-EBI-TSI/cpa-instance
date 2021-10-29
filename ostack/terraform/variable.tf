@@ -8,12 +8,6 @@ variable "instances" {
   description = "Number of instances to deploy"
 }
 
-variable "public_key_path" {
-  description = "The path of the public SSH key to be injected in the vm"
-  type        = string
-  default     = "~/.ssh/id_rsa.pub"
-}
-
 variable "disk_image_name" {
   default     = "ubuntu-16_04"
   description = "OS image name to use for node installation"
@@ -31,6 +25,11 @@ variable "instance_volume_size" {
 
 variable "network_name" {
   description = "The name of the OpenStack network where to deploy the instance"
+}
+
+variable "profile_public_key" {
+  description = "The public SSH key to be injected in the vm"
+  type        = string
 }
 
 variable "floating_ip_pool" {
